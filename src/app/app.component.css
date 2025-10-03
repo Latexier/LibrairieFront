@@ -1,0 +1,70 @@
+body {
+    background: linear-gradient(135deg, #f9f9f9, #f1f1f1);
+    color: #333;
+}
+
+/* Section produit */
+.product-section {
+    background: #fff;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.product-section img {
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.product-section img:hover {
+    transform: scale(1.03);
+}
+
+.btn-custom {
+    background: #8b5cf6;
+    color: #fff;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-custom:hover {
+    background: #6d28d9;
+    transform: translateY(-2px);
+    color: white;
+}
+
+/* Cartes des livres similaires */
+.card {
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+}
+
+.card-footer{
+    background-color: white;
+    border-radius: 12px;
+}
+
+footer {
+    font-size: 0.9rem;
+    height: 50px;
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+}
+
+.carousel-item{
+    justify-content: center;
+    max-height: 400px;
+}
