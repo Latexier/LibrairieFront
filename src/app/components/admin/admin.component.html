@@ -2,35 +2,35 @@
 <table>
     <tr *ngFor="let pist of Mylist">
         <td>
-            {{pist.id}}
+            {{pist.Id}}
         </td>
         <td>
-            {{pist.nom}}
+            {{pist.Nom}}
         </td>
         <td>
-            {{pist.prenom}}
+            {{pist.Prenom}}
         </td>
         <td>
-            {{pist.password}}
+            {{pist.Password}}
         </td>
         <td>
-            {{pist.mail}}
+            {{pist.Mail}}
         </td>
 <div>
 
-    <button (click)="create()">CREATE PERSONNE</button>
+    <button (click)="create()">CREATE CLIENT</button>
 </div>
 MESSAGE{{message}}
 
 <div>
 
-    <button (click)="delete(pist)">DELETE PERSONNE</button>
+    <button (click)="delete(pist)">DELETE CLIENT</button>
 </div>
 MESSAGE{{message}}
 
 <div>
 
-    <button (click)="update()">UPDATE PERSONNE</button>
+    <button (click)="update()">UPDATE CLIENT</button>
 </div>
 MESSAGE{{message}}
     </tr>

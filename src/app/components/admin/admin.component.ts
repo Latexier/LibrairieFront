@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ClientService } from 'src/app/services/client.service';
+
 
 @Component({
   selector: 'app-admin',
@@ -8,21 +9,19 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class AdminComponent {
 
-constructor(private http: HttpClient) { }
+constructor(private srv: ClientService) { }
   message: string;
-   Mylist: Array<Client>;
+   Mylist: Array<ClientService>;
+   c : any;
+   client = {ClientService};
+   
   ngOnInit(): void {
   }
 
 
 create() {
-    this.http.post(
-      "http://localhost:59819/api/personne",
-      this.client, // pas besoin de JSON.stringify, HttpClient le fait automatiquement
-      {
-        headers: new HttpHeaders({ "Content-Type": "application/json" })
-      }
-    ).subscribe({
+    this.srv.post(this.client)
+  {
       next: (response) => {
         this.message = "Client créée avec succès";
         console.log(response);
@@ -34,7 +33,7 @@ create() {
 
       init()
   {
-    this.http.get<Array<Personne>>("http://localhost:59819/api/personne").subscribe(
+    this.http.get<Array<Personne>>("http://localhost:5012/api/client").subscribe(
       (response) => {
         this.Mylist=response;
        
@@ -43,28 +42,52 @@ create() {
     );
 
   }
-  ngOnInit(): void {
-    this.init();
-  }
+ 
+  
+  
 
-  delete(p:Personne)
+  delete(c:{Client: any;}):void
   {
-    this.http.delete("http://localhost:59819/api/personne/" + p.id
+    this.http.delete("http://localhost:59819/api/personne/" + c.Id
 
  
   ).subscribe(response => {
   
-   this.message="Client supprimé";
+   this.message="personne supprimée";
    this.init();
 
 
   });
-
+  
   }
 
 
 
 
     });
+
+
+
+    
+  }
+  update()
+  {
+    const body = JSON.stringify(this.c );
+    
+    this.http.put("http://localhost:59819/api/personne", body, {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    }).
+      subscribe(response => {
+
+     
+        this.message = "update ok"
+      //  this.init();
+
+      }
+
+       );
+
   }
 }
