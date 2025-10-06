@@ -1,0 +1,35 @@
+<body>
+  <div class="container gx-2 py-5">
+    <div class="row gx-lg-5">
+
+      <div class="col-md-3 mb-5" *ngFor="let livre of livres">
+        <div class="card h-100">
+
+          <img
+            class="card-img-top"
+            [src]="livre.Image || 'assets/img/products/aot-tome1.jpg'"
+            [alt]="'Couverture du livre ' + livre.Titre"
+          >
+
+          <div class="card-body">
+            <h2 class="card-title">{{ livre.Titre }}</h2>
+            <p class="card-text">
+              {{ livre.Description || 'Aucune description disponible.' }}
+            </p>
+            <p class="card-text">
+              <small class="text-muted">Genre : {{ livre.Categorie }}</small>
+            </p>
+          </div>
+
+          <div class="card-footer">
+            <a class="btn btn-custom" href="#!">Voir plus</a>
+            <a class="btn btn-custom" href="#!">
+              <i class="bi-cart-fill me-1"></i> Ajouter au panier
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>

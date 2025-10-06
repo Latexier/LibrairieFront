@@ -5,7 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+
 import { AdminComponent } from './components/admin/admin.component';
+import { ProductsComponent } from './components/products/products.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ContactComponent } from './components/contact/contact.component';
 
 
 @NgModule({
@@ -13,11 +17,14 @@ import { AdminComponent } from './components/admin/admin.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    AdminComponent
+    AdminComponent,
+    ProductsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
