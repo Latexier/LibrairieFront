@@ -1,7 +1,7 @@
 export interface Client {
-  id: number;
-  nom: string;
-  prenom: string;
-  password: string;
-  mail: string;
+  Id: number;
+  Nom: string;
+  Prenom: string;
+  Password: string;
+  Mail: string;
 }
