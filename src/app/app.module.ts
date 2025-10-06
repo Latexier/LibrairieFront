@@ -13,6 +13,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoginadminComponent } from './components/loginadmin/loginadmin.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { PanierComponent } from './components/panier/panier.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { SignupComponent } from './components/signup/signup.component';
     ContactComponent,
     LoginComponent,
     LoginadminComponent,
-    SignupComponent
+    SignupComponent,
+    PanierComponent
   ],
   imports: [
     BrowserModule,

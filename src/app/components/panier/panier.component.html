@@ -1,0 +1,23 @@
+<div class="container gx-2 py-5">
+    <div class="row gx-lg-5">
+
+      <div class="col-md-3 mb-5" *ngFor="let livre of list">
+        <div class="card h-100">
+
+          <div class="card-body">
+            <h2 class="card-title">{{ livre.Titre }}</h2>
+            <p class="card-text">
+              <small class="text-muted">Genre : {{ livre.Categorie }}</small>
+            </p>
+          </div>
+
+          <div class="card-footer">
+            <a class="btn btn-custom" (click)="remove(livre.Id)">
+              Retirer du panier
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
