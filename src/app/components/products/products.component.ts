@@ -9,6 +9,8 @@ import { Livre } from '../../models/livre.model';
 export class ProductsComponent implements OnInit {
   livres: Livre[] = [];
   loading = true;
+  cart:Array<Livre>=new Array<Livre>();
+  tmp:Livre;
 
   constructor(private livreService: LivreService) {}
 
@@ -23,5 +25,16 @@ export class ProductsComponent implements OnInit {
         this.loading = false;
       }
     });
+  }
+
+  addtocart(id:number){
+    this.livreService.getById(id).subscribe({
+      next:(data)=>{
+        this.tmp=data;
+        this.cart.push(this.tmp);
+        sessionStorage.setItem("cart",JSON.stringify(this.cart));
+      }
+    });
+
   }
 }

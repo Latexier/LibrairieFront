@@ -7,6 +7,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoginadminComponent } from './components/loginadmin/loginadmin.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { PanierComponent } from './components/panier/panier.component';
 
 const routes: Routes = [
   {path:'', component:IndexComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'loginadmin',component:LoginadminComponent},
   {path:'signup',component:SignupComponent},
+  {path:'cart',component:PanierComponent},
 ];
 
 @NgModule({
