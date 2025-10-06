@@ -21,7 +21,7 @@ import { SignupComponent } from './components/signup/signup.component';
     HeaderComponent,
     FooterComponent,
     ProductsComponent,
-    LivreDetailsComponent
+    LivreDetailsComponent,
     ContactComponent,
     LoginComponent,
     LoginadminComponent,
