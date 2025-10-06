@@ -1,0 +1,27 @@
+<div class="row justify-content-center align-items-center">
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h2>Connexion administrateur</h2>
+            </div>
+            <form class="login-form" id="loginForm" novalidate>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="text" id="email" name="email" required autocomplete="email" [(ngModel)]="login">
+                        <label for="email">Adresse mail</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper password-wrapper">
+                        <input type="password" id="password" name="password" required autocomplete="current-password" [(ngModel)]="password">
+                        <label for="password">Mot de passe</label>
+                    </div>
+                </div>
+                <button type="submit" class="login-btn">
+                    <span class="btn-text" (click)="connexion()">Se connecter</span>
+                </button>
+            </form>
+            <span>{{message}}</span>
+        </div>
+    </div>
+</div>

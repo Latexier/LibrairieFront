@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  btnlogin:any;
+  btncompte:any;
 
+  ngOnInit(){
+    this.btnlogin=document.getElementById("login");
+    this.btncompte=document.getElementById("compte");
+    if(sessionStorage.getItem("user")!=null){
+      this.btnlogin.style.display="none";
+      this.btncompte.style.display="block";
+    }
+    else{
+      this.btnlogin.style.display="block";
+      this.btncompte.style.display="none";
+    }
+  }
 }
