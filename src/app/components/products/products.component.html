@@ -7,22 +7,21 @@
 
           <img
             class="card-img-top"
-            [src]="livre.Image || 'assets/img/products/aot-tome1.jpg'"
+            [src]="livre.Image || 'assets/img/products/default.PNG'"
             [alt]="'Couverture du livre ' + livre.Titre"
           >
 
           <div class="card-body">
             <h2 class="card-title">{{ livre.Titre }}</h2>
             <p class="card-text">
-              {{ livre.Description || 'Aucune description disponible.' }}
-            </p>
-            <p class="card-text">
               <small class="text-muted">Genre : {{ livre.Categorie }}</small>
             </p>
           </div>
 
           <div class="card-footer">
-            <a class="btn btn-custom" href="#!">Voir plus</a>
+            <a class="btn btn-custom" [routerLink]="['/product', livre.Id]">
+              Voir plus
+            </a>
             <a class="btn btn-custom" href="#!">
               <i class="bi-cart-fill me-1"></i> Ajouter au panier
             </a>
