@@ -1,0 +1,34 @@
+.card {
+  border: none;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.3);
+}
+
+.btn-custom {
+  background: #8b5cf6;
+  color: #fff;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-custom:hover {
+  background: #6d28d9;
+  transform: translateY(-2px);
+  color: white;
+}
+
+.card-footer {
+  background-color: white;
+  border-radius: 12px;
+}
