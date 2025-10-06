@@ -1,0 +1,33 @@
+<div class="row justify-content-center align-items-center">
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h2>Connexion</h2>
+            </div>
+            <form class="login-form" id="loginForm" novalidate>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="text" id="email" name="email" required autocomplete="email" [(ngModel)]="id">
+                        <label for="email">Adresse mail</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper password-wrapper">
+                        <input type="password" id="password" name="password" required autocomplete="current-password">
+                        <label for="password">Mot de passe</label>
+                    </div>
+                </div>
+                <button type="submit" class="login-btn">
+                    <span class="btn-text">Se connecter</span>
+                </button>
+            </form>
+
+            <div class="signup-link">
+                <p>Vous n'avez pas de compte ? <a href="#">Créer un compte</a></p>
+            </div>
+            <div class="signup-link">
+                <p>Vous êtes admin ? <a href="#">Se connecter en tant qu'admin</a></p>
+            </div>
+        </div>
+    </div>
+</div>
