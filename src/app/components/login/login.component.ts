@@ -26,12 +26,13 @@ export class LoginComponent {
         this.c=data;
         this.message="Login réussi";
         sessionStorage.setItem("user",JSON.stringify(this.c));
+        window.location.href="/products";
       },
       error:(err)=>{
         this.message="Mail ou mot de passe incorrect";
+        this.mail="";
+        this.password="";
       }
     });
-
   }
-
 }

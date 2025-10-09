@@ -8,10 +8,12 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
   btnlogin:any;
   btncompte:any;
+  btncommande:any;
 
   ngOnInit(){
     this.btnlogin=document.getElementById("login");
     this.btncompte=document.getElementById("compte");
+    this.btncommande=document.getElementById("commande");
     if(sessionStorage.getItem("user")!=null){
       this.btnlogin.style.display="none";
       this.btncompte.style.display="block";

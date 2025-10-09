@@ -11,6 +11,8 @@ import { PanierComponent } from './components/panier/panier.component';
 import { AdminLivresListComponent } from './components/admin-livres-list/admin-livres-list.component';
 import { AdminLivreFormComponent } from './components/admin-livre-form/admin-livre-form.component';
 import { AdminLivreDetailComponent } from './components/admin-livre-detail/admin-livre-detail.component';
+import { CommandesComponent } from './components/commandes/commandes.component';
+import { AccountComponent } from './components/account/account.component';
 
 const routes: Routes = [
   {path:'', component:IndexComponent},
@@ -25,6 +27,8 @@ const routes: Routes = [
   {path:'admin/livres/new',component: AdminLivreFormComponent},
   {path:'admin/livres/edit/:id',component: AdminLivreFormComponent},
   {path:'admin/livres/detail/:id',component: AdminLivreDetailComponent },
+  {path:'orders',component:CommandesComponent},
+  {path:'account',component:AccountComponent},
 ];
 
 @NgModule({
