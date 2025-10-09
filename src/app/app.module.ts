@@ -14,6 +14,9 @@ import { LoginComponent } from './components/login/login.component';
 import { LoginadminComponent } from './components/loginadmin/loginadmin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { PanierComponent } from './components/panier/panier.component';
+import { AdminLivresListComponent } from './components/admin-livres-list/admin-livres-list.component';
+import { AdminLivreFormComponent } from './components/admin-livre-form/admin-livre-form.component';
+import { AdminLivreDetailComponent } from './components/admin-livre-detail/admin-livre-detail.component';
 import { AccountComponent } from './components/account/account.component';
 import { CommandesComponent } from './components/commandes/commandes.component';
 
@@ -30,6 +33,9 @@ import { CommandesComponent } from './components/commandes/commandes.component';
     LoginadminComponent,
     SignupComponent,
     PanierComponent,
+    AdminLivresListComponent,
+    AdminLivreFormComponent,
+    AdminLivreDetailComponent
     AccountComponent,
     CommandesComponent
   ],

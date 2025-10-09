@@ -1,0 +1,25 @@
+.custom-livre-list {
+  min-height: 73.2vh;
+}
+
+table {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th {
+  text-align: center;
+}
+
+td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+button {
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
