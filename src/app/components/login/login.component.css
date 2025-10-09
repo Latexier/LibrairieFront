@@ -189,3 +189,10 @@ body {
     color: #4f46e5;
 }
 
+#message{
+    color:darkred;
+    font-weight: bold;
+    font-size: larger;
+    display: flex;
+    justify-content: center;
+}

@@ -14,6 +14,8 @@ import { LoginComponent } from './components/login/login.component';
 import { LoginadminComponent } from './components/loginadmin/loginadmin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { PanierComponent } from './components/panier/panier.component';
+import { AccountComponent } from './components/account/account.component';
+import { CommandesComponent } from './components/commandes/commandes.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { PanierComponent } from './components/panier/panier.component';
     LoginComponent,
     LoginadminComponent,
     SignupComponent,
-    PanierComponent
+    PanierComponent,
+    AccountComponent,
+    CommandesComponent
   ],
   imports: [
     BrowserModule,
