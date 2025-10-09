@@ -41,8 +41,8 @@
     </div>
 
     <div class="mb-3">
-      <label class="form-label">Image (URL)</label>
-      <input type="text" class="form-control" [(ngModel)]="livre.Image" name="Image" />
+      <label class="form-label">Image du livre</label>
+      <input type="file" class="form-control" (change)="onFileSelected($event)" />
     </div>
 
     <div class="mb-3">

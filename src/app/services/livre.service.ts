@@ -32,6 +32,10 @@ export class LivreService {
     return this.http.put(`${this.apiUrl}/${id}`, livre);
   }
 
+  uploadImage(formData: FormData) {
+    return this.http.post(`${this.apiUrl}/upload`, formData);
+  }
+
   delete(id: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
