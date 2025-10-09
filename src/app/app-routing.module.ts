@@ -6,6 +6,9 @@ import { ProductsComponent } from './components/products/products.component';
 import { LivreDetailsComponent } from './components/livre-details/livre-details.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AdminClientListeComponent } from './components/admin-client-liste/admin-client-liste.component';
+<<<<<<< HEAD
+import { AdminClientUpdateComponent } from './components/admin-client-update/admin-client-update.component';
+=======
 import { LoginComponent } from './components/login/login.component';
 import { LoginadminComponent } from './components/loginadmin/loginadmin.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -15,6 +18,7 @@ import { AdminLivreFormComponent } from './components/admin-livre-form/admin-liv
 import { AdminLivreDetailComponent } from './components/admin-livre-detail/admin-livre-detail.component';
 import { CommandesComponent } from './components/commandes/commandes.component';
 import { AccountComponent } from './components/account/account.component';
+>>>>>>> e724d0e7493a5ad31d29f0accaf8d05240d6faf2
 
 const routes: Routes = [
   {path:'', component:IndexComponent},
@@ -22,6 +26,10 @@ const routes: Routes = [
   {path:'product/:id', component: LivreDetailsComponent },
   {path:'contact',component:ContactComponent},
   {path: 'admin-client-liste', component: AdminClientListeComponent },
+<<<<<<< HEAD
+  {path: 'admin-client-update', component: AdminClientUpdateComponent}
+=======
+>>>>>>> e724d0e7493a5ad31d29f0accaf8d05240d6faf2
 
   {path:'login',component:LoginComponent},
   {path:'loginadmin',component:LoginadminComponent},
