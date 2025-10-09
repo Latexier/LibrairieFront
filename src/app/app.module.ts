@@ -18,6 +18,11 @@ import { SignupComponent } from './components/signup/signup.component';
 import { PanierComponent } from './components/panier/panier.component';
 import { AdminLivresComponent } from './admin-livres/admin-livres.component';
 import { AdminClientListeComponent } from './components/admin-client-liste/admin-client-liste.component';
+import { AdminLivresListComponent } from './components/admin-livres-list/admin-livres-list.component';
+import { AdminLivreFormComponent } from './components/admin-livre-form/admin-livre-form.component';
+import { AdminLivreDetailComponent } from './components/admin-livre-detail/admin-livre-detail.component';
+import { AccountComponent } from './components/account/account.component';
+import { CommandesComponent } from './components/commandes/commandes.component';
 
 
 @NgModule({
@@ -34,7 +39,12 @@ import { AdminClientListeComponent } from './components/admin-client-liste/admin
     SignupComponent,
     PanierComponent,
     AdminLivresComponent,
-    AdminClientListeComponent
+    AdminClientListeComponent,
+    AdminLivresListComponent,
+    AdminLivreFormComponent,
+    AdminLivreDetailComponent
+    AccountComponent,
+    CommandesComponent
   ],
   imports: [
     BrowserModule,

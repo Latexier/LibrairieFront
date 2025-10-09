@@ -15,4 +15,8 @@ export class ClientService {
   login(mail: string, password: string): Observable<Client> {
     return this.http.post<Client>(`${this.apiUrl}/login`, { mail, password });
   }
+  
+  register(client: Client): Observable<any> {
+    return this.http.post(`${this.apiUrl}/register`, client);
+  }
 }

@@ -1,0 +1,12 @@
+<div class="container">
+    <label for="name">Nom : &nbsp;</label>
+    <input type="text" name="name" [(ngModel)]="c.Nom"><br>
+    <label for="surname">Prénom :&nbsp; </label>
+    <input type="text" name="surname" [(ngModel)]="c.Prenom"><br>
+    <label for="mail">E-mail :&nbsp; </label>
+    <input type="text" name="mail" [(ngModel)]="c.Mail"><br>
+    <label for="password">Mot de passe :&nbsp;</label>
+    <input type="password" name="password" [(ngModel)]="c.Password" id="password">
+    <button class="btn btn-custom" (click)="toggle()" id="btn"><i class="bi bi-eye" id="icon"></i></button><br>
+    <button class="btn btn-custom">Valider les changements</button>
+</div>
