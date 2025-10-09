@@ -1,0 +1,39 @@
+<div class="container mt-5" *ngIf="livre">
+  <div class="card shadow-lg mb-4">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img
+          [src]="livre.Image || 'assets/img/products/default.PNG'"
+          class="img-fluid rounded-start"
+          alt="{{ livre.Titre }}"
+        />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h3 class="card-title text-primary">{{ livre.Titre }}</h3>
+          <p class="card-text"><strong>Catégorie :</strong> {{ livre.Categorie }}</p>
+          <p class="card-text"><strong>Prix :</strong> {{ livre.Prix }} €</p>
+          <p class="card-text"><strong>ISBN :</strong> {{ livre.Isbn }}</p>
+          <p class="card-text"><strong>Description :</strong></p>
+          <p>{{ livre.Description }}</p>
+
+          <div class="mt-4 d-flex gap-2">
+            <button class="btn btn-warning" (click)="onEdit()">
+              <i class="bi bi-pencil-square"></i> Modifier
+            </button>
+            <button class="btn btn-danger" (click)="onDelete()">
+              <i class="bi bi-trash"></i> Supprimer
+            </button>
+            <button class="btn btn-secondary" (click)="router.navigate(['/admin/livres'])">
+              <i class="bi bi-arrow-left"></i> Retour
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="errorMessage" class="alert alert-danger text-center mt-5">
+  {{ errorMessage }}
+</div>
