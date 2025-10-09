@@ -1,38 +1,97 @@
 <div class="row justify-content-center align-items-center">
-    <div class="signup-container">
-        <div class="signup-card">
-            <div class="signup-header">
-                <h2>Création de compte</h2>
+  <div class="signup-container">
+    <div class="signup-card mt-5">
+      <div class="signup-header">
+        <h2>Création de compte</h2>
+      </div>
+
+      <div *ngIf="successMessage" class="alert alert-success text-center">
+        {{ successMessage }}
+      </div>
+      <div *ngIf="errorMessage" class="alert alert-danger text-center">
+        {{ errorMessage }}
+      </div>
+
+      <form (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm" class="signup-form" novalidate>
+        <div class="form-group">
+          <div class="input-wrapper">
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="client.Nom"
+              name="nom"
+              required
+              #nom="ngModel"
+            />
+            <label for="name">Nom</label>
+            <div *ngIf="nom.invalid && nom.touched" class="text-danger small">
+              Le nom est requis.
             </div>
-            <form class="signup-form" id="signupForm" novalidate>
-                <div class="form-group">
-                    <div class="input-wrapper">
-                        <input type="text" id="name" name="name">
-                        <label for="name">Nom</label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-wrapper">
-                        <input type="text" id="firstname" name="firstname">
-                        <label for="firstname">Prénom</label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-wrapper">
-                        <input type="text" id="email" name="email">
-                        <label for="email">Adresse mail</label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-wrapper">
-                        <input type="password" id="password" name="password">
-                        <label for="password">Mot de passe</label>
-                    </div>
-                </div>
-                <button type="submit" class="signup-btn">
-                    <span class="btn-text">Créer un compte</span>
-                </button>
-            </form>
+          </div>
         </div>
+
+        <div class="form-group">
+          <div class="input-wrapper">
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="client.Prenom"
+              name="prenom"
+              required
+              #prenom="ngModel"
+            />
+            <label for="firstname">Prénom</label>
+            <div *ngIf="prenom.invalid && prenom.touched" class="text-danger small">
+              Le prénom est requis.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-wrapper">
+            <input
+              type="email"
+              class="form-control"
+              [(ngModel)]="client.Mail"
+              name="mail"
+              required
+              email
+              #mail="ngModel"
+            />
+            <label for="email">Adresse mail</label>
+            <div *ngIf="mail.invalid && mail.touched" class="text-danger small">
+              Entrez une adresse mail valide.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-wrapper">
+            <input
+              type="password"
+              class="form-control"
+              [(ngModel)]="client.Password"
+              name="password"
+              required
+              minlength="6"
+              #password="ngModel"
+            />
+            <label for="password">Mot de passe</label>
+            <div *ngIf="password.invalid && password.touched" class="text-danger small">
+              Le mot de passe doit contenir au moins 6 caractères.
+            </div>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="signup-btn"
+          [disabled]="loading || registerForm.invalid"
+        >
+          <span *ngIf="!loading"><i class="bi bi-person-plus"></i> S'inscrire</span>
+          <span *ngIf="loading" class="spinner-border spinner-border-sm"></span>
+        </button>
+      </form>
     </div>
+  </div>
 </div>

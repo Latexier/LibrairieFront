@@ -21,6 +21,7 @@ body {
 .signup-container {
     width: 100%;
     max-width: 400px;
+    min-height: 78.8vh;
 }
 
 .signup-card {
@@ -187,5 +188,11 @@ body {
 
 .signup-link a:hover {
     color: #4f46e5;
+}
+
+.input-wrapper input:not(:placeholder-shown) + label {
+  transform: translateY(-8px) scale(0.875);
+  color: #6d28d9;
+  font-weight: 500;
 }
 
