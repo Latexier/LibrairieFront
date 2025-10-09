@@ -1,0 +1,23 @@
+.btn-custom {
+    background: #8b5cf6;
+    color: #fff;
+    border: none;
+    transition: 0.3s;
+    margin: 15px;
+}
+
+.btn-custom:hover {
+    background: #6d28d9;
+    transform: translateY(-2px);
+    color: white;
+}
+
+
+div{
+    padding: 50px;
+    margin:auto;
+}
+
+input{
+    margin: 5px;
+}
