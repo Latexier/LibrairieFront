@@ -20,7 +20,7 @@ export class ClientService {
     return this.http.get<Client[]>(this.apiUrl);
   }
 
-      delete(id: number): Observable<any> {
+  delete(id: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
 

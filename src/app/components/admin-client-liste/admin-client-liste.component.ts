@@ -30,7 +30,7 @@ constructor (private srv: ClientService, private router: Router) {}
   if (confirm('Voulez-vous vraiment supprimer le client ?')) {
 
   this.srv.delete(id).subscribe({
-    
+
     next: () => {
 
       console.log('Utilisateur supprimé avec succès');
@@ -41,6 +41,7 @@ constructor (private srv: ClientService, private router: Router) {}
       }
    })
     
+
 
 }
 setTimeout(() => {
