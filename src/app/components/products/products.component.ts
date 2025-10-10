@@ -11,6 +11,7 @@ export class ProductsComponent implements OnInit {
   loading = true;
   cart:Array<Livre>;
   tmp:Livre;
+  message: string = '';
 
   constructor(private livreService: LivreService) {}
 
@@ -39,7 +40,11 @@ export class ProductsComponent implements OnInit {
         this.tmp=data;
         this.cart.push(this.tmp);
         sessionStorage.setItem("cart",JSON.stringify(this.cart));
-        console.log(this.cart);
+
+        this.message = `"${data.Titre}" a été ajouté au panier !`;
+        setTimeout(() => {
+          this.message = '';
+        }, 2000);
       }
     });
   }

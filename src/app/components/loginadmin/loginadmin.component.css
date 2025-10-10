@@ -1,5 +1,7 @@
 /* Basic Login Form - Clean & Simple */
-
+.container-custom{
+  min-height: 73vh;
+}
 * {
     margin: 0;
     padding: 0;

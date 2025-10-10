@@ -1,24 +1,39 @@
-<div class="container gx-2 py-5">
+<div class="container gx-2 py-5 container-custom">
+
+    <h2 class="mb-4 text-center">Votre panier</h2>
+
+    <div *ngIf="list.length === 0" class="alert alert-info text-center">
+      Votre panier est vide.
+    </div>
+
     <div class="row gx-lg-5">
 
-      <div class="col-md-3 mb-5" *ngFor="let livre of list">
-        <div class="card h-100">
-
-          <div class="card-body">
-            <h2 class="card-title">{{ livre.Titre }}</h2>
-            <p class="card-text">
-              <small class="text-muted">Genre : {{ livre.Categorie }}</small>
-            </p>
-          </div>
-
-          <div class="card-footer">
-            <a class="btn btn-custom" (click)="remove(list.indexOf(livre))">
-              Retirer du panier
-            </a>
+      <div class="row gx-lg-5" *ngIf="list.length > 0">
+        <div class="col-md-3 mb-5" *ngFor="let livre of list">
+          <div class="card h-100">
+            <div class="card-body">
+              <img
+                class="card-img-top"
+                [src]="livre.Image ? 'http://localhost:50512' + livre.Image : 'assets/img/products/default.PNG'"
+                [alt]="'Couverture du livre ' + livre.Titre"
+              >
+              <h5 class="card-title">{{ livre.Titre }}</h5>
+              <p class="card-text">
+                <small class="text-muted">{{ livre.Categorie }}</small><br>
+                <strong>{{ livre.Prix }} €</strong>
+              </p>
+            </div>
+            <div class="card-footer text-center">
+              <button class="btn btn-danger btn-sm" (click)="remove(list.indexOf(livre))">Retirer</button>
+            </div>
           </div>
         </div>
       </div>
+
     </div>
-    <button class="btn btn-bis" id="commande">Commander</button>
-    <div class="contaienr" id="empty"><i class="bi bi-cart-x"></i>  Votre panier est vide</div>
+
+    <div *ngIf="list.length > 0" class="text-end mt-4">
+      <h4>Total : <strong>{{ total | number:'1.2-2' }} €</strong></h4>
+      <button class="btn btn-success mt-3" (click)="commander()">Commander</button>
+    </div>
   </div>
