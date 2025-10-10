@@ -33,7 +33,6 @@
       <div class="col mb-5" *ngFor="let livreSim of livresSimilaires">
         <div class="card h-100 text-center shadow-sm">
 
-          <!-- 🖼️ Zone image avec fond dark et image centrée -->
           <div class="bg-dark d-flex justify-content-center align-items-center p-3" style="height: 250px;">
             <img
               [src]="livreSim.Image ? 'http://localhost:50512' + livreSim.Image : 'assets/img/products/default.PNG'"
@@ -43,7 +42,6 @@
             />
           </div>
 
-          <!-- 📘 Corps de la carte -->
           <div class="card-body p-4">
             <div class="text-center">
               <h5 class="fw-bolder text-light bg-dark py-2 rounded">{{ livreSim.Titre }}</h5>
@@ -51,8 +49,7 @@
               <span class="fw-bold text-success">{{ livreSim.Prix }} €</span>
             </div>
           </div>
-
-          <!-- 🔘 Bouton -->
+          
           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent text-center">
             <a class="btn btn-custom mt-auto" [routerLink]="['/product', livreSim.Id]">Voir le livre</a>
           </div>

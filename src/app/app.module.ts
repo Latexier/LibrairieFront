@@ -22,6 +22,8 @@ import { AdminLivreFormComponent } from './components/admin-livre-form/admin-liv
 import { AdminLivreDetailComponent } from './components/admin-livre-detail/admin-livre-detail.component';
 import { AccountComponent } from './components/account/account.component';
 import { CommandesComponent } from './components/commandes/commandes.component';
+import { AdminCommandesListComponent } from './components/admin-commandes-list/admin-commandes-list.component';
+import { AdminCommandeDetailsComponent } from './components/admin-commande-details/admin-commande-details.component';
 
 
 @NgModule({
@@ -43,6 +45,8 @@ import { CommandesComponent } from './components/commandes/commandes.component';
     AdminLivreDetailComponent,
     AccountComponent,
     CommandesComponent,
+    AdminCommandesListComponent,
+    AdminCommandeDetailsComponent
   ],
   imports: [
     BrowserModule,
