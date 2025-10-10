@@ -1,29 +1,24 @@
-<p>admin-client-update works!</p>
+<div class="container mt-5">
+<div class="mb-3">
+      <label class="form-label">NOM : </label>
+      <input type="text" class="form-control" [(ngModel)]="c.Nom" name="Nom" required #nom="ngModel" />
+    </div>
+
+
+ <div class="mb-3">
+      <label class="form-label">PRENOM: </label>
+      <input type="text" class="form-control" [(ngModel)]="c.Prenom" name="Prenom" required #prenom="ngModel" />
+    </div>
+
+<div class="mb-3">
+      <label class="form-label">MAIL: </label>
+      <input type="text" class="form-control" [(ngModel)]="c.Mail" name="Mail" required #mail="ngModel" />
+    </div>
+
+
+
 
 <div>
-    <p>ID :</p>
-    <input type="number" [(ngModel)]="c.Id" readonly>
+    <button class="btn btn-success me-2" (click)="Update(c.Id,c)">UPDATE CLIENT</button>
 </div>
-
-<div>
-    <p>NOM :</p>
-    <input type="text"  [(ngModel)]="c.Nom">
 </div>
-
-<div>
-    <p>PRENOM :</p>
-    <input type="text"  [(ngModel)]="c.Prenom">
-</div>
-<div>
-    <p>Password :</p>
-    <input type="text" [(ngModel)]="c.Password">
-</div>
-<div>
-    <p>MAIL :</p>
-    <input type="text" [(ngModel)]="c.Mail">
-</div>
-<div>
-
-    <button (click)="Update(c.Id,c)">UPDATE CLIENT</button>
-</div>
-

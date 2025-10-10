@@ -40,9 +40,20 @@ this.srv.getById(id).subscribe({
       }
     });
 
-    this.router.navigate(["/admin/client/liste"]);
+    setTimeout(() => {
+        this.router.navigate(["/admin/client/liste"]);
+      }, 500);
+
+ 
+  }
+
+
+    
 
   }
-}
+
+  
+
+
 
 
