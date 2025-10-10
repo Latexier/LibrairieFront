@@ -1,25 +1,43 @@
-<p>admin-client-liste works!</p>
 
+<div class="container mt-5 custom-livre-list">
+  <h2 class="mb-4 text-center">Gestion des Clients</h2>
 
+  
 
-<table>
-    <tr *ngFor="let x of Mylist">
+  <table class="table table-striped table-hover" >
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Mail</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let client of Mylist ">
+        <td>{{ client.Id }}</td>
+        <td>{{ client.Nom }}</td>
+        <td>{{ client.Prenom }}</td>
+        <td>{{ client.Mail}} </td>
+        
         <td>
-            {{x.Id}}
+          
+          <button class="btn btn-warning btn-sm me-2" (click)= "edit(client.Id)">
+            <i class="bi bi-pencil-square"></i>
+          </button>
+          <button class="btn btn-danger btn-sm" (click)="delete(client.Id)">
+            <i class="bi bi-trash"></i>
+          </button>
         </td>
-        <td>
-            {{x.Nom}}
-        </td>
-        <td>
-            {{x.Prenom}}
-        </td>
-        <td>
-            {{x.Mail}}
-        </td>
-         <td><button (click)="delete(x.Id)" > DELETE</button></td>
-         <td><button (click)= "edit(x.Id)" >  UPDATE</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-    </tr>
 
-</table>
+
+
+
+
 
