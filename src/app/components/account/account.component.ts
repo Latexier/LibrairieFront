@@ -9,11 +9,14 @@ import { ClientService } from 'src/app/services/client.service';
 })
 export class AccountComponent {
   c:Client;
-
+  tmp:Client;
+  message:string; 
+  
   constructor(private srv:ClientService){}
 
   ngOnInit(){
     this.c=JSON.parse(sessionStorage.getItem("user"));
+    
   }
 
   toggle(){
@@ -28,5 +31,26 @@ export class AccountComponent {
       icon.className="bi bi-eye";
       password.type="password";
     }
+  }
+
+  update(id:number, client:Client){
+    this.srv.update(id,this.c).subscribe({
+      next:(data)=>{
+        console.log("Mise à jour réussie");
+        this.srv.getById(this.c.Id).subscribe({
+          next:(data)=>{
+            this.tmp=data;
+            sessionStorage.setItem("user",JSON.stringify(this.tmp));
+          }
+        })
+        this.message="Compte mis à jour";
+        setTimeout(() => {
+          location.reload();
+        }, 1000);
+      },
+      error(err) {
+        console.error(err);
+      },
+    })
   }
 }

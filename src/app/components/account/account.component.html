@@ -8,7 +8,8 @@
     <label for="password">Mot de passe :&nbsp;</label>
     <input type="password" name="password" [(ngModel)]="c.Password" id="password">
     <button class="btn btn-custom" (click)="toggle()" id="btn"><i class="bi bi-eye" id="icon"></i></button><br>
-    <button class="btn btn-custom">Valider les changements</button>
+    <button class="btn btn-custom" (click)="update(c.Id,c)">Valider les changements</button>
+    <h4>{{message}}</h4>
 </div>
 <div class="container">
     <button class="btn btn-custom" id="histo">Mon historique de commande</button>
