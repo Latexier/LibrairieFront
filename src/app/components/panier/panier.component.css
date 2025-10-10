@@ -1,3 +1,7 @@
+.container-custom{
+  min-height: 78.9vh;
+}
+
 .btn-bis {
     background: #8b5cf6;
     color: #fff;
@@ -26,5 +30,5 @@
 
 .bi-cart-x{
     color: #fff;
-    
+
 }

@@ -16,6 +16,7 @@ export class LivreDetailsComponent implements OnInit, OnDestroy {
   cart:Array<Livre>=new Array<Livre>();
   tmp:Livre;
   routeSub!: Subscription;
+  message: string = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -59,10 +60,14 @@ export class LivreDetailsComponent implements OnInit, OnDestroy {
         this.tmp=data;
         this.cart.push(this.tmp);
         sessionStorage.setItem("cart",JSON.stringify(this.cart));
-        console.log(this.cart);
+
+        this.message = `"${data.Titre}" a été ajouté au panier !`;
+        setTimeout(() => {
+          this.message = '';
+        }, 2000);
       }
     });
-   }
+  }
   chargerLivresSimilaires(categorie: string, id: number): void {
     this.livreService.getByCategorie(categorie).subscribe({
       next: (sim) => {

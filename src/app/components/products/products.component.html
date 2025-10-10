@@ -1,5 +1,10 @@
 <body>
   <div class="container gx-2 py-5">
+
+    <div *ngIf="message" class="alert alert-success text-center" role="alert">
+      {{ message }}
+    </div>
+
     <div class="row gx-lg-5">
 
       <div class="col-md-3 mb-5" *ngFor="let livre of livres">
@@ -14,12 +19,13 @@
           <div class="card-body">
             <h2 class="card-title">{{ livre.Titre }}</h2>
             <p class="card-text">
-              <small class="text-muted">Genre : {{ livre.Categorie }}</small>
+              <small class="text-muted">Genre : {{ livre.Categorie }}</small><br>
+              <strong>{{ livre.Prix }} €</strong>
             </p>
           </div>
 
           <div class="card-footer">
-            <a class="btn btn-custom" [routerLink]="['/product', livre.Id]">
+            <a class="btn btn-custom mb-2" [routerLink]="['/product', livre.Id]">
               Voir plus
             </a>
             <a class="btn btn-custom" (click)="addtocart(livre.Id)">

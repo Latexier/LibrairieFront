@@ -5,7 +5,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+.container-custom{
+  min-height: 73vh;
+}
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     background: #f8fafc;

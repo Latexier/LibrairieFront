@@ -1,18 +1,18 @@
 export interface Commande {
-  Id: number;
-  IdClient: number;
-  DateCommande: string;
+  Id?: number;
+  IdClient?: number | null;
+  DateCommande?: Date;
   Total: number;
 }
 
 export interface CommandeLivre {
-  IdCommande: number;
+  IdCommande?: number;
   IdLivre: number;
   Quantite: number;
   PrixUnitaire: number;
 }
 
 export interface CommandePayload {
-  Commande: Omit<Commande, 'Id'>;
+  Commande: Commande;
   Livres: CommandeLivre[];
 }

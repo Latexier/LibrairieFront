@@ -20,6 +20,9 @@
             Ajouter au panier
           </button>
         </div>
+          <div *ngIf="message" class="alert alert-success text-center mt-4" role="alert">
+            {{ message }}
+          </div>
       </div>
     </div>
   </div>
@@ -49,7 +52,7 @@
               <span class="fw-bold text-success">{{ livreSim.Prix }} €</span>
             </div>
           </div>
-          
+
           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent text-center">
             <a class="btn btn-custom mt-auto" [routerLink]="['/product', livreSim.Id]">Voir le livre</a>
           </div>
