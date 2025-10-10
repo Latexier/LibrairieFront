@@ -12,12 +12,13 @@
           </div>
 
           <div class="card-footer">
-            <a class="btn btn-custom" (click)="remove(livre.Id)">
+            <a class="btn btn-custom" (click)="remove(list.indexOf(livre))">
               Retirer du panier
             </a>
           </div>
         </div>
       </div>
-
     </div>
+    <button class="btn btn-bis" id="commande">Commander</button>
+    <div class="contaienr" id="empty"><i class="bi bi-cart-x"></i>  Votre panier est vide</div>
   </div>
