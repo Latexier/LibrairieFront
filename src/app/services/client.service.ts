@@ -28,6 +28,11 @@ export class ClientService {
       return this.http.put(`${this.apiUrl}/${id}`, Client);
     }
 
+    getById(id: number): Observable<Client> {
+        return this.http.get<Client>(`${this.apiUrl}/${id}`);
+      }
+
+  
   register(client: Client): Observable<any> {
     return this.http.post(`${this.apiUrl}/register`, client);
   }
