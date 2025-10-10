@@ -1,0 +1,29 @@
+<p>admin-client-update works!</p>
+
+<div>
+    <p>ID :</p>
+    <input type="number" [(ngModel)]="c.Id" readonly>
+</div>
+
+<div>
+    <p>NOM :</p>
+    <input type="text"  [(ngModel)]="c.Nom">
+</div>
+
+<div>
+    <p>PRENOM :</p>
+    <input type="text"  [(ngModel)]="c.Prenom">
+</div>
+<div>
+    <p>Password :</p>
+    <input type="text" [(ngModel)]="c.Password">
+</div>
+<div>
+    <p>MAIL :</p>
+    <input type="text" [(ngModel)]="c.Mail">
+</div>
+<div>
+
+    <button (click)="Update(c.Id,c)">UPDATE CLIENT</button>
+</div>
+

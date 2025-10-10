@@ -7,7 +7,7 @@
 
           <img
             class="card-img-top"
-            [src]="livre.Image || 'assets/img/products/default.PNG'"
+            [src]="livre.Image ? 'http://localhost:50512' + livre.Image : 'assets/img/products/default.PNG'"
             [alt]="'Couverture du livre ' + livre.Titre"
           >
 

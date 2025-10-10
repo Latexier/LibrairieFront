@@ -3,7 +3,7 @@
     <div class="row g-0">
       <div class="col-md-4">
         <img
-          [src]="livre.Image || 'assets/img/products/default.PNG'"
+          [src]="livre.Image ? 'http://localhost:50512' + livre.Image : 'assets/img/products/default.PNG'"
           class="img-fluid rounded-start"
           alt="{{ livre.Titre }}"
         />

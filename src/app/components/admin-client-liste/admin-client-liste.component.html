@@ -1,0 +1,23 @@
+<p>admin-client-liste works!</p>
+
+
+
+<table>
+    <tr *ngFor="let x of Mylist">
+        <td>
+            {{x.Id}}
+        </td>
+        <td>
+            {{x.Nom}}
+        </td>
+        <td>
+            {{x.Prenom}}
+        </td>
+        <td>
+            {{x.Mail}}
+        </td>
+         <td><button (click)="delete(x.Id)" > DELETE</button></td>
+    </tr>
+
+</table>
+
