@@ -27,7 +27,7 @@
         <td>{{ livre.Id }}</td>
         <td>{{ livre.Titre }}</td>
         <td>{{ livre.Categorie }}</td>
-        <td>{{ livre.Prix | number:'1.2-2' }}</td>
+        <td>{{ livre.Prix|  number:'1.2-2' }} €</td>
         <td>{{ livre.Isbn }}</td>
         <td>
           <button class="btn btn-info btn-sm me-2" (click)="router.navigate(['/admin/livres/detail', livre.Id])">
