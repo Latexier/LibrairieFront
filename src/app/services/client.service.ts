@@ -15,8 +15,6 @@ export class ClientService {
   login(mail: string, password: string): Observable<Client> {
     return this.http.post<Client>(`${this.apiUrl}/login`, { mail, password });
   }
-<<<<<<< HEAD
-
   getAll(): Observable<Client[]> {
     return this.http.get<Client[]>(this.apiUrl);
   }
@@ -28,13 +26,8 @@ export class ClientService {
   update(id: number, Client: Client): Observable<any> {
       return this.http.put(`${this.apiUrl}/${id}`, Client);
     }
-
-
-=======
-  
   register(client: Client): Observable<any> {
     return this.http.post(`${this.apiUrl}/register`, client);
   }
->>>>>>> e724d0e7493a5ad31d29f0accaf8d05240d6faf2
 }
 

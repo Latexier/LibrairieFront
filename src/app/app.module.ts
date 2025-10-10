@@ -37,7 +37,7 @@ import { CommandesComponent } from './components/commandes/commandes.component';
     SignupComponent,
     PanierComponent,
     AdminClientListeComponent,
-    AdminClientUpdateComponent
+    AdminClientUpdateComponent,
     AdminLivresListComponent,
     AdminLivreFormComponent,
     AdminLivreDetailComponent,
