@@ -15,9 +15,13 @@
 
 div{
     padding: 50px;
-    margin:auto;
+    width: 80%;
 }
 
 input{
     margin: 5px;
+}
+
+#histo{
+    font-size:x-large;
 }

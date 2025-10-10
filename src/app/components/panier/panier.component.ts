@@ -7,19 +7,25 @@ import { Livre } from 'src/app/models/livre.model';
   styleUrls: ['./panier.component.css']
 })
 export class PanierComponent {
-  list:Array<Livre>;
+  list:Livre[];
+  
 
   ngOnInit(){
     this.list=JSON.parse(sessionStorage.getItem("cart"));
-  }
-
-  init(){
-    this.list=JSON.parse(sessionStorage.getItem("cart"));
+    if(this.list!=null){
+      document.getElementById("commande").style.display="block";
+      document.getElementById("empty").style.display="none";
+    }
+    else{
+      document.getElementById("commande").style.display="none";
+      document.getElementById("empty").style.display="block";
+    }
   }
 
   remove(id:number){
-    this.list.splice(id-1,1);
+    console.log(id);
+    this.list.splice(id,1);
     sessionStorage.setItem("cart",JSON.stringify(this.list));
-    this.init();
+    location.reload();
   }
 }

@@ -9,12 +9,18 @@ import { Livre } from '../../models/livre.model';
 export class ProductsComponent implements OnInit {
   livres: Livre[] = [];
   loading = true;
-  cart:Array<Livre>=new Array<Livre>();
+  cart:Array<Livre>;
   tmp:Livre;
 
   constructor(private livreService: LivreService) {}
 
   ngOnInit(): void {
+    if(sessionStorage.getItem("cart")==null){
+      this.cart=new Array<Livre>();
+    }
+    else{
+      this.cart=JSON.parse(sessionStorage.getItem("cart"));
+    }
     this.livreService.getAll().subscribe({
       next: (data) => {
         this.livres = data;
@@ -33,8 +39,8 @@ export class ProductsComponent implements OnInit {
         this.tmp=data;
         this.cart.push(this.tmp);
         sessionStorage.setItem("cart",JSON.stringify(this.cart));
+        console.log(this.cart);
       }
     });
-
   }
 }
