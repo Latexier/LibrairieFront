@@ -16,15 +16,14 @@ import { LoginadminComponent } from './components/loginadmin/loginadmin.componen
 import { SignupComponent } from './components/signup/signup.component';
 import { PanierComponent } from './components/panier/panier.component';
 import { AdminClientListeComponent } from './components/admin-client-liste/admin-client-liste.component';
-<<<<<<< HEAD
 import { AdminClientUpdateComponent } from './components/admin-client-update/admin-client-update.component';
-=======
 import { AdminLivresListComponent } from './components/admin-livres-list/admin-livres-list.component';
 import { AdminLivreFormComponent } from './components/admin-livre-form/admin-livre-form.component';
 import { AdminLivreDetailComponent } from './components/admin-livre-detail/admin-livre-detail.component';
 import { AccountComponent } from './components/account/account.component';
 import { CommandesComponent } from './components/commandes/commandes.component';
->>>>>>> e724d0e7493a5ad31d29f0accaf8d05240d6faf2
+import { AdminCommandesListComponent } from './components/admin-commandes-list/admin-commandes-list.component';
+import { AdminCommandeDetailsComponent } from './components/admin-commande-details/admin-commande-details.component';
 
 
 @NgModule({
@@ -40,15 +39,14 @@ import { CommandesComponent } from './components/commandes/commandes.component';
     SignupComponent,
     PanierComponent,
     AdminClientListeComponent,
-<<<<<<< HEAD
-    AdminClientUpdateComponent
-=======
+    AdminClientUpdateComponent,
     AdminLivresListComponent,
     AdminLivreFormComponent,
     AdminLivreDetailComponent,
     AccountComponent,
-    CommandesComponent
->>>>>>> e724d0e7493a5ad31d29f0accaf8d05240d6faf2
+    CommandesComponent,
+    AdminCommandesListComponent,
+    AdminCommandeDetailsComponent
   ],
   imports: [
     BrowserModule,

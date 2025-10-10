@@ -1,0 +1,36 @@
+<div class="container mt-5 mb-5 custom-command-details">
+  <h2 class="mb-4 text-center">Détails de la commande #{{ commande.Id }}</h2>
+
+  <div class="card shadow p-4 mb-4">
+    <h5>Informations commande</h5>
+    <p><strong>Client :</strong> {{ commande.IdClient }}</p>
+    <p><strong>Date :</strong> {{ commande.DateCommande | date:"dd/MM/yyyy 'à' HH:mm" }}</p>
+    <p><strong>Total :</strong> <span class="fw-bold">{{ commande.Total | number:'1.2-2' }} €</span></p>
+  </div>
+
+  <div class="card shadow p-4">
+    <h5>Livres de la commande</h5>
+    <table class="table table-bordered mt-3 text-center">
+      <thead class="table-dark">
+        <tr>
+          <th>ID Livre</th>
+          <th>Quantité</th>
+          <th>Prix unitaire (€)</th>
+          <th>Sous-total (€)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let l of livres">
+          <td>{{ l.IdLivre }}</td>
+          <td>{{ l.Quantite }}</td>
+          <td>{{ l.PrixUnitaire | number:'1.2-2' }}</td>
+          <td>{{ (l.Quantite * l.PrixUnitaire) | number:'1.2-2' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="text-end mt-3">
+    <button class="btn btn-secondary" (click)="router.navigate(['/admin/commandes'])">Retour</button>
+  </div>
+</div>

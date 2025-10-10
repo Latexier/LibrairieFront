@@ -16,7 +16,7 @@ constructor (private srv: ClientService) {}
 delete(id: number) {
 
   this.srv.delete(id).subscribe({
-    
+
     next: () => {
 
       console.log('Utilisateur supprimé avec succès');
@@ -25,7 +25,7 @@ delete(id: number) {
       error: (err) => {
         console.error('Erreur lors de la suppression : ', err);
       }
-    
+
 
 
   })
