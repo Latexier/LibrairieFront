@@ -35,9 +35,9 @@ import { CommandesComponent } from './components/commandes/commandes.component';
     PanierComponent,
     AdminLivresListComponent,
     AdminLivreFormComponent,
-    AdminLivreDetailComponent
+    AdminLivreDetailComponent,
     AccountComponent,
-    CommandesComponent
+    CommandesComponent,
   ],
   imports: [
     BrowserModule,

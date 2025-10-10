@@ -12,6 +12,8 @@ export class LivreDetailsComponent implements OnInit {
   livre!: Livre;
   livresSimilaires: Livre[] = [];
   loading = true;
+  cart:Array<Livre>=new Array<Livre>();
+  tmp:Livre;
 
   constructor(
     private route: ActivatedRoute,
@@ -20,6 +22,12 @@ export class LivreDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
+    if(sessionStorage.getItem("cart")==null){
+      this.cart=new Array<Livre>();
+    }
+    else{
+      this.cart=JSON.parse(sessionStorage.getItem("cart"));
+    }
     this.livreService.getById(id).subscribe({
       next: (data) => {
         this.livre = data;
@@ -40,4 +48,15 @@ export class LivreDetailsComponent implements OnInit {
       }
     });
   }
+
+  addtocart(id:number){
+    this.livreService.getById(id).subscribe({
+      next:(data)=>{
+        this.tmp=data;
+        this.cart.push(this.tmp);
+        sessionStorage.setItem("cart",JSON.stringify(this.cart));
+        console.log(this.cart);
+      }
+    });
+   }
 }
