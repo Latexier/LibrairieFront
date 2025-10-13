@@ -1,16 +1,42 @@
-<div class="container">
-    <label for="name">Nom : &nbsp;</label>
-    <input type="text" name="name" [(ngModel)]="c.Nom"><br>
-    <label for="surname">Prénom :&nbsp; </label>
-    <input type="text" name="surname" [(ngModel)]="c.Prenom"><br>
-    <label for="mail">E-mail :&nbsp; </label>
-    <input type="text" name="mail" [(ngModel)]="c.Mail"><br>
-    <label for="password">Mot de passe :&nbsp;</label>
-    <input type="password" name="password" [(ngModel)]="c.Password" id="password">
-    <button class="btn btn-custom" (click)="toggle()" id="btn"><i class="bi bi-eye" id="icon"></i></button><br>
-    <button class="btn btn-custom" (click)="update(c.Id,c)">Valider les changements</button>
-    <h4>{{message}}</h4>
-</div>
-<div class="container">
-    <button class="btn btn-custom" id="histo">Mon historique de commande</button>
+<div class="container mt-5 mb-5 custom-container">
+  <div class="card shadow-lg p-4 rounded-4">
+    <h3 class="text-center mb-4">Modifier mes informations</h3>
+
+    <form class="row g-3">
+      <div class="col-md-6">
+        <label for="name" class="form-label">Nom</label>
+        <input type="text" id="name" class="form-control" name="name" [(ngModel)]="c.Nom" placeholder="Entrez votre nom">
+      </div>
+
+      <div class="col-md-6">
+        <label for="surname" class="form-label">Prénom</label>
+        <input type="text" id="surname" class="form-control" name="surname" [(ngModel)]="c.Prenom" placeholder="Entrez votre prénom">
+      </div>
+
+      <div class="col-12">
+        <label for="mail" class="form-label">E-mail</label>
+        <input type="email" id="mail" class="form-control" name="mail" [(ngModel)]="c.Mail" placeholder="exemple@email.com">
+      </div>
+
+      <div class="col-12">
+        <label for="password" class="form-label">Mot de passe</label>
+        <div class="input-group">
+          <input type="password" id="password" class="form-control" name="password" [(ngModel)]="c.Password" placeholder="********">
+          <button type="button" class="btn btn-outline-secondary" (click)="toggle()" id="btn">
+            <i class="bi bi-eye" id="icon"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="col-12 text-center mt-3">
+        <button type="button" class="btn btn-primary px-4" (click)="update(c.Id, c)">
+          <i class="bi bi-check-circle me-2"></i> Valider les changements
+        </button>
+      </div>
+
+      <div class="col-12 text-center mt-3">
+        <h4 class="text-success">{{ message }}</h4>
+      </div>
+    </form>
+  </div>
 </div>

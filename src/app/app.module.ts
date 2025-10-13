@@ -23,6 +23,7 @@ import { AccountComponent } from './components/account/account.component';
 import { CommandesComponent } from './components/commandes/commandes.component';
 import { AdminCommandesListComponent } from './components/admin-commandes-list/admin-commandes-list.component';
 import { AdminCommandeDetailsComponent } from './components/admin-commande-details/admin-commande-details.component';
+import { HeaderAdminComponent } from './components/header-admin/header-admin.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { AdminCommandeDetailsComponent } from './components/admin-commande-detai
     AccountComponent,
     CommandesComponent,
     AdminCommandesListComponent,
-    AdminCommandeDetailsComponent
+    AdminCommandeDetailsComponent,
+    HeaderAdminComponent
   ],
   imports: [
     BrowserModule,

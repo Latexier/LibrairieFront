@@ -9,54 +9,38 @@ import { ClientService } from 'src/app/services/client.service';
   styleUrls: ['./admin-client-liste.component.css']
 })
 export class AdminClientListeComponent {
-Mylist: Array<Client>;
+  Mylist: Client[] = [];
 
-constructor (private srv: ClientService, private router: Router) {}
+  constructor(private srv: ClientService, private router: Router) {}
 
- ngOnInit(): void {
-   // this.srv.getliste().then(x=> this.Mylist = x);
-   this.srv.getAll().subscribe({
-   next: (res) => {
-    this.Mylist = res;
-    console.log(this.Mylist);
-    },
-    error: (err) => console.error(err)
-  });
-
- }
- 
- 
-  delete(id: number) : void {
-  if (confirm('Voulez-vous vraiment supprimer le client ?')) {
-
-  this.srv.delete(id).subscribe({
-
-    next: () => {
-
-      console.log('Utilisateur supprimé avec succès');
-        // Ici tu peux recharger ta liste d’utilisateurs
-      },
-      error: (err) => {
-        console.error('Erreur lors de la suppression : ', err);
-      }
-   })
-    
-
-
-}
-setTimeout(() => {
-        location.reload();
-      }, 2000);
-//location.reload();
- 
+  ngOnInit(): void {
+    this.loadClients();
   }
 
-edit(id: number) : void {
+  loadClients(): void {
+    this.srv.getAll().subscribe({
+      next: (res) => {
+        this.Mylist = res;
+      },
+      error: (err) => console.error('Erreur chargement clients :', err)
+    });
+  }
 
-this.router.navigate(["/admin/client/update", id])
+  delete(id: number): void {
+    if (confirm('Voulez-vous vraiment supprimer ce client ?')) {
+      this.srv.delete(id).subscribe({
+        next: () => {
+          console.log('Client supprimé avec succès');
+          this.Mylist = this.Mylist.filter(client => client.Id !== id);
+        },
+        error: (err) => {
+          console.error('Erreur lors de la suppression :', err);
+        }
+      });
+    }
+  }
 
-}
-
-
-
+  edit(id: number): void {
+    this.router.navigate(['/admin/client/update', id]);
+  }
 }

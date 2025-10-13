@@ -29,6 +29,7 @@ export class AdminLivreFormComponent implements OnInit {
     'Fantaisie',
     'Policier',
     'Manga',
+    'Comics',
     'Vulgarisation',
     'Thriller',
     'Science-fiction',

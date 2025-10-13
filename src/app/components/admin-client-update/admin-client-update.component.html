@@ -1,24 +1,22 @@
-<div class="container mt-5">
-<div class="mb-3">
-      <label class="form-label">NOM : </label>
-      <input type="text" class="form-control" [(ngModel)]="c.Nom" name="Nom" required #nom="ngModel" />
-    </div>
+<div class="container mt-5 mb-5 custom-container">
+  <h2 class="mb-4">UPDATE CLIENT</h2>
 
+  <div class="mb-3">
+    <label class="form-label">NOM : </label>
+    <input type="text" class="form-control" [(ngModel)]="c.Nom" name="Nom" required #nom="ngModel" />
+  </div>
 
- <div class="mb-3">
-      <label class="form-label">PRENOM: </label>
-      <input type="text" class="form-control" [(ngModel)]="c.Prenom" name="Prenom" required #prenom="ngModel" />
-    </div>
+  <div class="mb-3">
+    <label class="form-label">PRENOM: </label>
+    <input type="text" class="form-control" [(ngModel)]="c.Prenom" name="Prenom" required #prenom="ngModel" />
+  </div>
 
-<div class="mb-3">
-      <label class="form-label">MAIL: </label>
-      <input type="text" class="form-control" [(ngModel)]="c.Mail" name="Mail" required #mail="ngModel" />
-    </div>
+  <div class="mb-3">
+    <label class="form-label">MAIL: </label>
+    <input type="text" class="form-control" [(ngModel)]="c.Mail" name="Mail" required #mail="ngModel" />
+  </div>
 
-
-
-
-<div>
-    <button class="btn btn-success me-2" (click)="Update(c.Id,c)">UPDATE CLIENT</button>
-</div>
+  <div>
+    <button class="btn btn-success me-2" (click)="Update(c.Id,c)">Modifier le client</button>
+  </div>
 </div>

@@ -10,3 +10,15 @@
     transform: translateY(-2px);
     color: white;
 }
+#carouselExample .carousel-item img {
+    height: 60vh;           /* ajuste la hauteur ici (par ex. 50vh, 60vh, etc.) */
+    object-fit: cover;      /* garde le centrage et coupe proprement */
+    object-position: center;
+}
+
+/* Centrer le carousel verticalement si besoin */
+#carouselExample {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
